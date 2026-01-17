@@ -109,7 +109,9 @@ export const shadcnRegistry: ComponentRegistry = {
     element,
     children,
   }: ComponentRenderProps<SheetTextProps>) => (
-    <SheetTrigger>{children ?? element.props.text ?? "Open"}</SheetTrigger>
+    <SheetTrigger asChild={Boolean(children)}>
+      {children ?? element.props.text ?? "Open"}
+    </SheetTrigger>
   ),
   SheetContent: ({
     element,
